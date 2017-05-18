@@ -22,7 +22,7 @@ function calculatorModule(x){
     if(typeof x === 'number'){
       return total;
     } else {
-      return 'error';
+      throw error;
     }
   },
 
@@ -43,7 +43,7 @@ function calculatorModule(x){
     if(typeof x === 'number'){
       return total += x;
     } else {
-      return 'error';
+      throw error;
     }
   },
 
@@ -56,37 +56,59 @@ function calculatorModule(x){
     if(typeof x === 'number'){
       return total -= x;
     } else {
-      return 'error';
+      throw error;
     }
    },
-
 
   /**
    * Multiplies the value by `total`
    * @param  { Number } x
    */
 
+  multiply: function(x){
+    if(typeof x === 'number'){
+      return total *= x;
+    } else {
+      throw error;
+    }
+  },
 
   /**
    * Divides the value passing in by `total`
    * @param  { Number } x
    */
-
+  divide: function(x){
+    if(typeof x === 'number'){
+      return total /= x;
+    } else {
+      throw error;
+    }
+  },
 
   /**
    * Return the value stored at `memory`
    * @return { Number }
    */
 
+  recallMemory: function(){
+    return memory;
+  },
 
   /**
    * Stores the value of `total` to `memory`
    */
 
+  saveMemory: function(){
+    memory = total;
+  },
 
   /**
    * Clear the value stored at `memory`
    */
+
+  clearMemory: function(){
+    memory = 0;
+  }
 
   /**
    * Validation
@@ -95,4 +117,6 @@ function calculatorModule(x){
   };
  return calculator;
  }
+
+ calculatorModule();
 
