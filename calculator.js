@@ -22,7 +22,7 @@ function calculatorModule(x){
     if(typeof x === 'number'){
       return total;
     } else {
-      throw error;
+      throw new Error('you suck');
     }
   },
 
@@ -43,7 +43,7 @@ function calculatorModule(x){
     if(typeof x === 'number'){
       return total += x;
     } else {
-      throw error;
+      throw new Error('you suck');
     }
   },
 
@@ -56,7 +56,7 @@ function calculatorModule(x){
     if(typeof x === 'number'){
       return total -= x;
     } else {
-      throw error;
+      throw new Error('you suck');
     }
    },
 
@@ -69,7 +69,7 @@ function calculatorModule(x){
     if(typeof x === 'number'){
       return total *= x;
     } else {
-      throw error;
+      throw new Error('you suck');
     }
   },
 
@@ -81,7 +81,7 @@ function calculatorModule(x){
     if(typeof x === 'number'){
       return total /= x;
     } else {
-      throw error;
+      throw new Error('you suck');
     }
   },
 
