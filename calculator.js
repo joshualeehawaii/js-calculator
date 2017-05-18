@@ -34,18 +34,31 @@ function calculatorModule(x){
     return total;
   },
 
-
-
   /**
    * Sums the value passed in with `total`
    * @param { Number } x
    */
 
+  add: function(x){
+    if(typeof x === 'number'){
+      return total += x;
+    } else {
+      return 'error';
+    }
+  },
 
   /**
    * Subtracts the value passed in from `total`
    * @param  { Number } x
    */
+
+   subtract: function(x){
+    if(typeof x === 'number'){
+      return total -= x;
+    } else {
+      return 'error';
+    }
+   },
 
 
   /**
