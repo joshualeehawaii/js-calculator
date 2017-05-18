@@ -17,11 +17,23 @@ function calculatorModule(x){
    * @return { Number }    current total
    */
 
+  load: function(x){
+    total = x;
+    if(typeof x === 'number'){
+      return total;
+    } else {
+      return 'error';
+    }
+  },
 
   /**
    * Return the value of `total`
    * @return { Number }
    */
+  getTotal: function(){
+    return total;
+  },
+
 
 
   /**
@@ -68,5 +80,6 @@ function calculatorModule(x){
    */
 
   };
+ return calculator;
  }
 
