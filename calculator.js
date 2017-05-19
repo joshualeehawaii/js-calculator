@@ -17,7 +17,7 @@ function calculatorModule(x){
    * @return { Number }    current total
    */
 
-  load: function(x){
+  load: function load(x){
     total = x;
     if(typeof x === 'number'){
       return total;
@@ -30,7 +30,7 @@ function calculatorModule(x){
    * Return the value of `total`
    * @return { Number }
    */
-  getTotal: function(){
+  getTotal: function getTotal(){
     return total;
   },
 
@@ -39,7 +39,7 @@ function calculatorModule(x){
    * @param { Number } x
    */
 
-  add: function(x){
+  add: function add(x){
     if(typeof x === 'number'){
       return total += x;
     } else {
@@ -52,7 +52,7 @@ function calculatorModule(x){
    * @param  { Number } x
    */
 
-   subtract: function(x){
+   subtract: function subtract(x){
     if(typeof x === 'number'){
       return total -= x;
     } else {
@@ -65,7 +65,7 @@ function calculatorModule(x){
    * @param  { Number } x
    */
 
-  multiply: function(x){
+  multiply: function multiply(x){
     if(typeof x === 'number'){
       return total *= x;
     } else {
@@ -77,7 +77,7 @@ function calculatorModule(x){
    * Divides the value passing in by `total`
    * @param  { Number } x
    */
-  divide: function(x){
+  divide: function divide(x){
     if(typeof x === 'number'){
       return total /= x;
     } else {
@@ -90,7 +90,7 @@ function calculatorModule(x){
    * @return { Number }
    */
 
-  recallMemory: function(){
+  recallMemory: function recallMemory(){
     return memory;
   },
 
@@ -98,7 +98,7 @@ function calculatorModule(x){
    * Stores the value of `total` to `memory`
    */
 
-  saveMemory: function(){
+  saveMemory: function saveMemory(){
     memory = total;
   },
 
@@ -106,7 +106,7 @@ function calculatorModule(x){
    * Clear the value stored at `memory`
    */
 
-  clearMemory: function(){
+  clearMemory: function clearMemory(){
     memory = 0;
   }
 
@@ -115,7 +115,17 @@ function calculatorModule(x){
    */
 
   };
- return calculator;
+ return {
+    load: load,
+    getTotal: getTotal,
+    add: add,
+    subtract: subtract,
+    multiply: multiply,
+    divide: divide,
+    recallMemory: recallMemory,
+    saveMemory: saveMemory,
+    clearMemory: clearMemory
+  };
  }
 
  calculatorModule();
